@@ -90,6 +90,7 @@ message MyServerBusPersistenceVersion{
 
 message DeleteTopicGrpcRequest {
   string TopicId = 1;
+  int32 DeleteAfter = 2;
 }
 
 service MyServiceBusMessagesPersistenceGrpcService {
