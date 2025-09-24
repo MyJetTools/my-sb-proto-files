@@ -20,9 +20,7 @@ message QueueSnapshotGrpcModel {
   persistence.QueueTypePersistenceGrpcEnum QueueType = 3;
 }
 
-message SaveQueueSnapshotGrpcRequest {
-  repeated persistence.TopicAndQueuesSnapshotGrpcModel QueueSnapshot = 1;
-}
+
 
 message TopicAndQueuesSnapshotGrpcModel {
   string TopicId = 1;
@@ -115,7 +113,7 @@ message RestoreTopicGrpcResponse{
 service MyServiceBusMessagesPersistenceGrpcService {
 
    rpc GetQueueSnapshot(google.protobuf.Empty) returns (stream TopicAndQueuesSnapshotGrpcModel);
-   rpc SaveQueueSnapshot(SaveQueueSnapshotGrpcRequest) returns (google.protobuf.Empty);
+   rpc SaveQueueSnapshot(stream TopicAndQueuesSnapshotGrpcModel) returns (google.protobuf.Empty);
 
    rpc GetVersion(google.protobuf.Empty) returns (GetVersionGrpcResponse);
    rpc GetMessage(GetMessageGrpcRequest) returns (MessageContentGrpcModel);
