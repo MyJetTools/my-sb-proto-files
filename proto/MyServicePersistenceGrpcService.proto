@@ -49,11 +49,6 @@ message MessageContentMetaDataItem {
   string Value = 2;
 }
 
-service MyServiceBusHistoryReaderGrpcService {
-
-}
-
-
 //////////////
 
 
