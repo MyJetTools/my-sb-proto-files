@@ -117,8 +117,8 @@ service MyServiceBusMessagesPersistenceGrpcService {
    rpc GetPageCompressed(GetPageCompressedGrpcRequest) returns (stream CompressedMessageChunkModel);
    rpc GetPage(GetPageGrpcRequest) returns (stream MessageContentGrpcModel);
    rpc GetSubPage(GetSubPageGrpcRequest) returns (stream MessageContentGrpcModel);
-   rpc SaveMessages(stream CompressedMessageChunkModel) returns (google.protobuf.Empty);
-   rpc SaveMessagesUncompressed(stream UnCompressedMessageChunkModel) returns (google.protobuf.Empty);
+   rpc SaveMessagesCompressed(stream CompressedMessageChunkModel) returns (google.protobuf.Empty);
+   rpc SaveMessages(stream MessageContentGrpcModel) returns (google.protobuf.Empty);
    rpc DeleteTopic(DeleteTopicGrpcRequest) returns (google.protobuf.Empty);
    rpc RestoreTopic(RestoreTopicGrpcRequest) returns (RestoreTopicGrpcResponse);
    rpc Ping(google.protobuf.Empty) returns (google.protobuf.Empty);
