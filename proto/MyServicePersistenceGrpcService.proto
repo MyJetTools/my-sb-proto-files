@@ -115,7 +115,7 @@ message RestoreTopicGrpcResponse{
 service MyServiceBusMessagesPersistenceGrpcService {
 
    rpc GetQueueSnapshot(google.protobuf.Empty) returns (stream TopicAndQueuesSnapshotGrpcModel);
-   rpc SaveSnapshot(SaveQueueSnapshotGrpcRequest) returns (google.protobuf.Empty);
+   rpc SaveQueueSnapshot(SaveQueueSnapshotGrpcRequest) returns (google.protobuf.Empty);
 
    rpc GetVersion(google.protobuf.Empty) returns (GetVersionGrpcResponse);
    rpc GetMessage(GetMessageGrpcRequest) returns (MessageContentGrpcModel);
